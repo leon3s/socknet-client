@@ -24,9 +24,13 @@ class Socknet {
    function emit(name, ...args) {
      this.socket.emit(name, ...args);
    }
+   function close() {
+     this.socket.close();
+   }
 
    this.on = on;
    this.emit = emit;
+   this.close = close;
  }
 
  bindAction = (actionCreator, dispatch) => (...args) => {

@@ -126,8 +126,13 @@ function () {
         (_this$socket = this.socket).emit.apply(_this$socket, [name].concat(args));
       }
 
+      function close() {
+        this.socket.close();
+      }
+
       this.on = on;
       this.emit = emit;
+      this.close = close;
     }
   }, {
     key: "generateActionFn",
